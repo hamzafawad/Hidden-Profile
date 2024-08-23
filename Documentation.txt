@@ -1,0 +1,12 @@
+Hidden Profile - Documentation
+
+Overview
+Hidden Profile is a tool designed to assist users in finding social media profiles based on a username or number. The tool uses advanced logic to provide accurate and relevant search results.
+
+Features
+Search by Username or Number: Users can input either a username or a phone number to perform a search.
+Dynamic Input Fields: If a number is entered, the city, country, and additional search options are automatically disabled.
+Results Display: The tool presents matched links along with details such as the link number, type, and a clickable link.
+
+
+

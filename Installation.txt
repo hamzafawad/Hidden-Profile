@@ -1,0 +1,49 @@
+Clone the Repository:
+git clone https://github.com/yourusername/hidden-profile.git
+cd hidden-profile
+
+Install Dependencies:
+Make sure you have Python installed. Install the required Python libraries using pip:
+pip install -r requirements.txt
+
+
+Set Up the Environment:
+Make sure that you have installed Flask and other necessary tools as mentioned in the requirements.txt file.
+
+Run the Application:
+Start the Flask application:
+
+python app.py
+
+
+he application will be accessible at http://127.0.0.1:5000/.
+
+"Usage"
+Access the Tool:
+Open your web browser and go to http://127.0.0.1:5000/.
+
+Input Fields:
+
+Username/Number: Enter the username or phone number you want to search.
+City and Country: Enter the city and country (optional), these fields will be disabled if a number is entered.
+Include City and Country in Query: Select whether to include city and country in your search query.
+Search Results:
+
+After submitting the form, the tool will display matched links in a table format with details.
+Code Structure
+app.py: Contains the main logic of the Flask application.
+templates/index.html: The HTML template for the web interface.
+static/styles.css: The CSS file for styling the HTML page.
+requirements.txt: Lists the dependencies required to run the tool.
+Key Functions
+checkInput(): JavaScript function that checks if the input is a number and disables other input fields accordingly.
+Flask Routing: Handles the display of the search form and results.
+Important Notes
+The tool automatically adjusts input fields based on the type of input (username or number).
+The search results are dynamically generated and displayed in a structured format.
+The tool is designed to be run locally, but it can be deployed to a server for broader access.
+
+Contact
+For any issues or further information, please contact me at hamzafawad@2@gmail.com.
+
+
