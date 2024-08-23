@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function checkInput() {
+            const usernameInput = document.getElementById("username").value;
+            const isNumber = /^\d+$/.test(usernameInput);
+
+            document.getElementById("city").disabled = isNumber;
+            document.getElementById("country").disabled = isNumber;
+            document.getElementById("includeCityCountry").disabled = isNumber;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hidden Profile</h1>
+    <form method="POST" onsubmit="checkInput()">
+        <input type="text" id="username" name="username" placeholder="Enter Username or Number" required oninput="checkInput()">
+        <input type="text" id="city" name="city" placeholder="Enter city">
+        <input type="text" id="country" name="country" placeholder="Enter country">
+        <select id="includeCityCountry" name="includeCityCountry">
+            <option value="" disabled selected>Include City and Country in Query?</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if links %}
+        <h2>Matched Links:</h2>
+        <div class="full-size-container">
+            <div class="time-display">
+                <h3>Current Time: {{ current_time }}</h3>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Link No</th>
+                        <th>Username</th>
+                        <th>Type</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for link in links %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ username }}</td>
+                            <td>{{ link.type }}</td>
+                            <td><a href="{{ link.link }}" target="_blank">{{ link.link }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+</body>
+</html>
